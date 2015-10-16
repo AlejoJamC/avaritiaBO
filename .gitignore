@@ -1,3 +1,6 @@
+#Webstorm
+.idea/
+
 # Logs
 logs
 *.log
@@ -25,3 +28,13 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+
+#Global
+.DS_Store
+thumbs.db
+
+# Premium Template Metronic
+# You can buy it on themeforest
+# http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469
+/public/dashboard/
+*.html
