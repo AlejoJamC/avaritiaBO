@@ -1,0 +1,30 @@
+{
+  "name": "avaritiabo",
+  "version": "0.1.0",
+  "description": "Credit simulator for personal banking (Back-Office), Node.js, Express.js, Mustache.js, Passport.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://alejojamc@github.com/AlejoJamC/avaritiaBO.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mustachejs",
+    "passportjs",
+    "rest",
+    "api"
+  ],
+  "author": "Alejandro Mantilla <@AlejoJamC>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/AlejoJamC/avaritiaBO/issues"
+  },
+  "homepage": "https://github.com/AlejoJamC/avaritiaBO#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
