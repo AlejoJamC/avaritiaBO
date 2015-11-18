@@ -16,10 +16,25 @@
 function agregarRutas (app){
     // Instancio los archivos que contienen las rutas
     var indexRoutes = require('./index');
+    var countryRoutes = require('./countries');
+    var currencyRoutes = require('./currencies');
+    var languageRoutes = require('./languages');
+    var rateRoutes = require('./rates');
+    var serviceRoutes = require('./services');
 
-    // Asigno las ruta
+    // Assign all routes
     // Index
     app.use('/', indexRoutes);
+    // Countries
+    app.use('/', countryRoutes);
+    // Currencies
+    app.use('/', currencyRoutes);
+    // languages
+    app.use('/', languageRoutes);
+    // Rates
+    app.use('/', rateRoutes);
+    // Services
+    app.use('/', serviceRoutes);
 }
 // Exportamos la funcion
 module.exports.agregarRutas = agregarRutas;
