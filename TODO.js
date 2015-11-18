@@ -6,6 +6,9 @@
  * LICENSE file in the root directory of this source tree or translated in the assets folder.
  */
 
+// Global
+// TODO: traducir los comentarios en codigo al ingles
+
 // Views
 // Partials
 // head
