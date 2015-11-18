@@ -7,15 +7,64 @@
  */
 
 var express = require('express');
-var routerIndex = express.Router();
+var indexRoutes = express.Router();
 var request = require('request');
+var sess;
 
 /* GET home page. */
-routerIndex.get('/', function (req, res) {
+indexRoutes.get('/', function (req, res) {
     res.render('index', {
         title : 'Avaritia | Interfaz administrativa',
         level : ''
     });
 });
 
-module.exports = routerIndex;
+/* GET Login. */
+indexRoutes.get('/login', function (req, res) {
+    res.render('login', {
+        title : 'Avaritia | Iniciar sesi&oacute;n',
+        messageLogin: '',
+        level : ''
+    });
+});
+
+/* POST Login. */
+indexRoutes.post('/login', function (req, res) {
+    // get the current session
+    sess = req.session;
+    //
+    var inputEmailEncode = encodeURIComponent(req.body.inputEmail);
+    var inputPasswordEncode = encodeURIComponent(req.body.inputassword);
+
+    // Request Options
+    var options = {
+        'url': global.WEBSERVICE + '/login',
+        'form':{
+            'email': inputEmailEncode,
+            'pwd': inputPasswordEncode
+        }
+    };
+
+    request.post(options, function (error, response, body) {
+        if(!error && response.statusCode == 200){
+            sess.email = req.body.inputEmail;
+            res.redirect('/');
+        }else{
+            sess.destroy();
+            res.render('login', {
+                title : 'Avaritia | Iniciar sesi&oacute;n',
+                messageLogin: 'Correo electrónico y/o contrase&ntilde;a no coinciden.',
+                level : ''
+            });
+        }
+    });
+});
+
+/* GET Logout. */
+indexRoutes.get('/logout', function (req, res) {
+    sess = req.session;
+    sess.destroy();
+    res.redirect('/login');
+});
+
+module.exports = indexRoutes;
