@@ -36,15 +36,49 @@ body.page-header-fixed.page-quick-sidebar-over-content.page-sidebar-closed-hide-
                     ul.page-breadcrumb
                         li
                             i.fa.fa-home
-                            a(href='index.html') Home
+                            a(href='/') Dashboard
                             i.fa.fa-angle-right
                         li
-                            a(href='#') Dashboard
-                h3.page-title
-                    | Dashboard
-                    small reports & statistics
+                            a(href=moduleURL) !{ module }
                 // END PAGE HEADER
                 .clearfix
+
+                // BEGIN TABLE CONTENT
+                .portlet.box.green
+                  .portlet-title
+                    .caption
+                      | !{ module }&nbsp;|
+                      small !{ moduleDescription }
+                    .tools
+                      a.collapse(href='javascript:;')
+                  .portlet-body.flip-scroll
+                    table.table.table-bordered.table-striped.table-condensed.flip-content
+                      thead.flip-content
+                        tr
+                          th(width='20%')
+                            | Id
+                          th
+                            | Nombre
+                          th
+                            | Fecha de Creaci&oacute;n
+                          th
+                            | Ultima Edici&oacute;n
+                          th
+                            | Habilitado
+                      tbody
+                        tr
+                          td
+                            | texto
+                          td
+                            | texto
+                          td
+                            | texto
+                          td
+                            | texto
+                          td
+                            | texto
+                // END SAMPLE TABLE PORTLET
+
         // END CONTENT
 
     // FOOTER
