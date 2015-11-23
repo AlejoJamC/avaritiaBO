@@ -12,10 +12,8 @@ thumbs.db
 # Premium Template Metronic
 # You can buy it on themeforest
 # http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469
-public/v4.1.0/
-public/v4.5.2/
 public/css/
-public/dashboard/
+public/media/
 public/img/
 public/plugins/
 public/scripts/
