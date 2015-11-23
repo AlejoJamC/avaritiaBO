@@ -48,7 +48,7 @@ app.set('port', puerto);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 // Ubicacion del Favicon
-app.use(favicon(__dirname + '/public/img/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 // Logger de Express
 app.use(logger('dev'));
 // Permitir utilizar verbos HTTP en todos los clientes
