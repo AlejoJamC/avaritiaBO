@@ -1,0 +1,89 @@
+include ./partials/head.jade
+
+body.page-header-fixed.page-quick-sidebar-over-content.page-sidebar-closed-hide-logo.page-container-bg-solid
+
+    // HEADER
+    include ./partials/header.jade
+
+    .clearfix
+    // BEGIN CONTAINER
+    .page-container
+
+        // SIDEBAR
+        include ./partials/sidebar.jade
+
+        // BEGIN CONTENT
+        .page-content-wrapper
+            .page-content
+                // BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM
+                #portlet-config.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                button.close(type='button', data-dismiss='modal', aria-hidden='true')
+                                h4.modal-title Modal title
+                            .modal-body
+                                | Widget settings form goes here
+                            .modal-footer
+                                button.btn.blue(type='button') Save changes
+                                button.btn.default(type='button', data-dismiss='modal') Close
+                        // /.modal-content
+                    // /.modal-dialog
+                // /.modal
+                // END SAMPLE PORTLET CONFIGURATION MODAL FORM
+                // BEGIN PAGE HEADER
+                .page-bar
+                    ul.page-breadcrumb
+                        li
+                            i.fa.fa-home
+                            a(href='/') Dashboard
+                            i.fa.fa-angle-right
+                        li
+                            a(href=moduleURL) !{ module }
+                // END PAGE HEADER
+                .clearfix
+
+                // BEGIN TABLE CONTENT
+                br
+                .portlet.box.green
+                    .portlet-title
+                        .caption
+                            | !{ module }&nbsp;|
+                            small !{ moduleDescription }
+                        .tools
+                            a.collapse(href='javascript:;')
+                    .portlet-body.flip-scroll
+                        table.table.table-bordered.table-striped.table-condensed.flip-content
+                            thead.flip-content
+                                tr
+                                    th(width='20%')
+                                        | Id
+                                    th
+                                        | Nombre
+                                    th
+                                        | Fecha de Creaci&oacute;n
+                                    th
+                                        | Ultima Edici&oacute;n
+                                    th
+                                        | Habilitado
+                            tbody
+                                tr
+                                    td
+                                        | texto
+                                    td
+                                        | texto
+                                    td
+                                        | texto
+                                    td
+                                        | texto
+                                    td
+                                        | texto
+                // END SAMPLE TABLE PORTLET
+
+        // END CONTENT
+
+    // FOOTER
+    include ./partials/footer.jade
+
+    // SCRIPTS
+    include ./partials/scripts.jade
