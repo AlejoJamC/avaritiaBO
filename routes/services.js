@@ -14,7 +14,13 @@ var request = require('request');
 serviceRoutes.get('/servicios', function (req, res) {
     res.render('services', {
         title : 'Servicios | Avaritia',
-        level : ''
+        level : '',
+        processMessage: '',
+        error: '',
+        module: 'Servicios',
+        moduleURL:'servicios',
+        moduleDescription:'Lista de servicios',
+        services : ''
     });
 });
 

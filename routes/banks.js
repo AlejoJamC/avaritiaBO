@@ -14,7 +14,13 @@ var request = require('request');
 bankRoutes.get('/bancos', function (req, res) {
     res.render('banks', {
         title : 'Bancos | Avaritia',
-        level : ''
+        level : '',
+        processMessage: '',
+        error: '',
+        module: 'Bancos',
+        moduleURL:'bancos',
+        moduleDescription:'Lista de bancos',
+        banks : ''
     });
 });
 

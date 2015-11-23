@@ -12,9 +12,23 @@ var request = require('request');
 
 /* GET home page. */
 languageRoutes.get('/idiomas', function (req, res) {
+    // Get the list of all countries
+    var options = {
+        'url': global.WEBSERVICE + '/languages',
+        'auth':{
+            'bearer': global.BEARERTOKEN
+        }
+    };
+
     res.render('languages', {
         title : 'Idiomas | Avaritia',
-        level : ''
+        level :  '',
+        processMessage: '',
+        error: '',
+        module: 'Idiomas',
+        moduleURL:'idiomas',
+        moduleDescription:'Lista de idiomas habilitados',
+        languages : ''
     });
 });
 

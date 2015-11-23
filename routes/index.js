@@ -15,7 +15,13 @@ var sess;
 indexRoutes.get('/', function (req, res) {
     res.render('index', {
         title : 'Avaritia | Interfaz administrativa',
-        level : ''
+        level : '',
+        processMessage: '',
+        error: '',
+        module: 'Dashboard',
+        moduleURL:'/',
+        moduleDescription:'Dashboard',
+        currencies : ''
     });
 });
 

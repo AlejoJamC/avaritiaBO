@@ -14,7 +14,13 @@ var request = require('request');
 rateRoutes.get('/tasas', function (req, res) {
     res.render('rates', {
         title : 'Tasas | Avaritia',
-        level : ''
+        level : '',
+        processMessage: '',
+        error: '',
+        module: 'Tasas',
+        moduleURL:'tasas',
+        moduleDescription:'Lista de tasas disponibles',
+        rates : ''
     });
 });
 

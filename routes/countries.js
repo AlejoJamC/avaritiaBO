@@ -40,7 +40,7 @@ countryRoutes.get('/paises', function (req, res) {
                     creationDate: info[i].creationDate,
                     lastEditionDate: info[i].lastEditionDate,
                     enabled: info[i].enabled
-                }
+                };
             }
             processMessage = 'Lista completa cargada sin problemas';
             errorState = false;
