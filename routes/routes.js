@@ -16,6 +16,7 @@
 function agregarRutas (app){
     // Instancio los archivos que contienen las rutas
     var indexRoutes = require('./index');
+    var bankRoutes = require('./banks');
     var countryRoutes = require('./countries');
     var currencyRoutes = require('./currencies');
     var languageRoutes = require('./languages');
@@ -25,6 +26,8 @@ function agregarRutas (app){
     // Assign all routes
     // Index
     app.use('/', indexRoutes);
+    // Banks
+    app.use('/', bankRoutes);
     // Countries
     app.use('/', countryRoutes);
     // Currencies
