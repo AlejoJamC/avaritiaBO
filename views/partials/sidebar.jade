@@ -9,78 +9,78 @@
 
       li.sidebar-search-wrapper
       br
-      li.start.active.open
+      li(class=(module === 'Dashboard')? 'start active open': 'nav-item')
         a(href='/')
           i.fa.fa-language
           span.title
             | Dashboard
-      li.nav-item
+      li(class=(module === 'Bancos')? 'nav-item start active open': 'nav-item')
         a.nav-link.nav-toggle(href='javascript:;')
           i.fa.fa-university
           span.title Bancos
-          span.arrow
+          span(class=(module === 'Bancos')? 'arrow open': 'arrow')
         ul.sub-menu
-          li
+          li(class=(moduleURL === 'bancos')? 'nav-item active open': 'nav-item')
             a(href='bancos')
               | Lista
-          li
+          li(class=(moduleURL === 'bancos/agregar')? 'nav-item active open': 'nav-item')
             a(href='bancos/agregar')
               | Agregar
-          li
+          li(class=(moduleURL === 'bancos/editar')? 'nav-item active open': 'nav-item')
             a(href='bancos/editar')
               | Editar
-          li
+          li(class=(moduleURL === 'bancos/eliminar')? 'nav-item active open': 'nav-item')
             a(href='bancos/eliminar')
               | Eliminar
-      li.nav-item
+      li(class=(module === 'Tasas')? 'nav-item start active open': 'nav-item')
         a.nav-link.nav-toggle(href='javascript:;')
           i.fa.fa-bar-chart
           span.title Tasas de interes
-          span.arrow
+          span(class=(module === 'Tasas')? 'arrow open': 'arrow')
         ul.sub-menu
-          li
+          li(class=(moduleURL === 'tasas')? 'nav-item active open': 'nav-item')
             a(href='tasas')
               | Lista
-          li
+          li(class=(moduleURL === 'tasas/eliminar')? 'nav-item active open': 'nav-item')
             a(href='tasas/agregar')
               | Agregar
-          li
+          li(class=(moduleURL === 'tasas/eliminar')? 'nav-item active open': 'nav-item')
             a(href='tasas/editar')
               | Editar
-          li
+          li(class=(moduleURL === 'tasas/eliminar')? 'nav-item active open': 'nav-item')
             a(href='tasas/eliminar')
               | Eliminar
-      li.nav-item
+      li(class=(module === 'Servicios')? 'nav-item start active open': 'nav-item')
         a.nav-link.nav-toggle(href='javascript:;')
           i.fa.fa-cogs
           span.title Servicios
-          span.arrow
+          span(class=(module === 'Servicios')? 'arrow open': 'arrow')
         ul.sub-menu
-          li
+          li(class=(moduleURL === 'servicios')? 'nav-item active open': 'nav-item')
             a(href='servicios')
               | Lista
-          li
+          li(class=(moduleURL === 'servicios/eliminar')? 'nav-item active open': 'nav-item')
             a(href='servicios/agregar')
               | Agregar
-          li
+          li(class=(moduleURL === 'servicios/eliminar')? 'nav-item active open': 'nav-item')
             a(href='servicios/editar')
               | Editar
-          li
+          li(class=(moduleURL === 'servicios/eliminar')? 'nav-item active open': 'nav-item')
             a(href='servicios/eliminar')
               | Eliminar
       li.heading
         h3.uppercase Parametros
-      li
+      li(class=(module === 'Idiomas')? 'nav-item start active open': 'nav-item')
         a(href='idiomas')
           i.fa.fa-language
           span.title
             | Idiomas
-      li
+      li(class=(module === 'Monedas')? 'nav-item start active open': 'nav-item')
         a(href='monedas')
           i.fa.fa-money
           span.title
             | Monedas
-      li
+      li(class=(module === 'Paises')? 'nav-item start active open': 'nav-item')
         a(href='paises')
           i.fa.fa-map-marker
           span.title
