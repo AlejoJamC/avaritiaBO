@@ -68,7 +68,7 @@ currencyRoutes.get('/monedas', function (req, res) {
         level :  '',
         processMessage: '',
         error: '',
-        module: 'Modenas',
+        module: 'Monedas',
         moduleURL:'monedas',
         moduleDescription:'Lista de monedas habilitados',
         currencies : ''
