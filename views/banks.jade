@@ -67,17 +67,18 @@ body.page-header-fixed.page-quick-sidebar-over-content.page-sidebar-closed-hide-
                                     th
                                         | Habilitado
                             tbody
+                            -each item in banks
                                 tr
                                     td
-                                        | texto
+                                        | #{item._id}
                                     td
-                                        | texto
+                                        | #{item.name}
                                     td
-                                        | texto
+                                        | #{item.creationDate}
                                     td
-                                        | texto
+                                        | #{item.lastEditionDate}
                                     td
-                                        | texto
+                                        | #{item.enabled}
                 // END SAMPLE TABLE PORTLET
 
         // END CONTENT

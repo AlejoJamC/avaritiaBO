@@ -1,0 +1,103 @@
+include ./partials/head.jade
+
+body.page-header-fixed.page-quick-sidebar-over-content.page-sidebar-closed-hide-logo.page-container-bg-solid
+
+    // HEADER
+    include ./partials/header.jade
+
+    .clearfix
+    // BEGIN CONTAINER
+    .page-container
+
+        // SIDEBAR
+        include ./partials/sidebar.jade
+
+        // BEGIN CONTENT
+        .page-content-wrapper
+            .page-content
+                // BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM
+                #portlet-config.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                button.close(type='button', data-dismiss='modal', aria-hidden='true')
+                                h4.modal-title Modal title
+                            .modal-body
+                                | Widget settings form goes here
+                            .modal-footer
+                                button.btn.blue(type='button') Save changes
+                                button.btn.default(type='button', data-dismiss='modal') Close
+                        // /.modal-content
+                    // /.modal-dialog
+                // /.modal
+                // END SAMPLE PORTLET CONFIGURATION MODAL FORM
+                // BEGIN PAGE HEADER
+                .page-bar
+                    ul.page-breadcrumb
+                        li
+                            i.fa.fa-home
+                            a(href='/') Dashboard
+                            i.fa.fa-angle-right
+                        li
+                            a(href=moduleURL) !{ module }
+                // END PAGE HEADER
+                .clearfix
+
+                // BEGIN TABLE CONTENT
+                br
+                .portlet.light.bordered
+                  .portlet-title
+                    .caption
+                      i.fa.fa-bank
+                      span.caption-subject.font-dark.sbold.uppercase Agregar Banco
+                  .portlet-body.form
+                    form.form-horizontal(role='form', action='/bancos/agregar', method='post')
+                      .form-body
+                        .form-group
+                          label.col-md-3.control-label Nombre
+                          .col-md-9
+                            .input-group
+                              span.input-group-addon
+                                i.fa.fa-bank
+                              input.form-control(id='inputName', name='inputName', type='text', placeholder='Nombre del banco')
+                        .form-group
+                          label.col-md-3.control-label Nit
+                          .col-md-9
+                            input.form-control(id='inputNit', name='inputNit', type='text', placeholder='Nit')
+                        .form-group
+                          label.col-md-3.control-label Puntaje
+                          .col-md-9
+                            input.form-control(id='inputScore', name='inputScore', type='text', placeholder='Puntaje')
+                        .form-group
+                          label.col-md-3.control-label Contacto
+                          .col-md-9
+                            input.form-control(id='inputContact', name='inputContact', type='text', placeholder='Contacto')
+                        .form-group
+                          label.col-md-3.control-label Ciudad
+                          .col-md-9
+                           select.form-control(id='optionCountry', name='optionCountry')
+                            - each item in countries
+                                option(value='0') Selecciona una ciudad
+                                option(value='#{item._id}') #{item.name}
+                            input(id='countryText', name='countryText', type='hidden', value='')
+                      .form-actions
+                        .row
+                          .col-md-offset-3.col-md-9
+                            button.btn.green(type='submit') Agregar
+                            button.btn.default(type='button') Cancelar
+                // END SAMPLE TABLE PORTLET
+
+        // END CONTENT
+
+    // FOOTER
+    include ./partials/footer.jade
+
+    // SCRIPTS
+    include ./partials/scripts.jade
+    script.
+      $("#optionCountry").change(function() {
+          var $value = $(this).val();
+          var $title = $(this).children('option[value='+$value+']').html();
+          $('input#countryText').val($title);
+      });
+
